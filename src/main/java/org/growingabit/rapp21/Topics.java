@@ -22,11 +22,11 @@ import com.google.appengine.api.users.UserServiceFactory;
 // [START example]
 import com.google.appengine.api.utils.SystemProperty;
 
-import java.io.*;
-
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import javax.servlet.*;
+
+import java.io.*;
 import com.google.appengine.api.datastore.*;
 import com.google.appengine.api.datastore.Query.*;
 import java.util.*;

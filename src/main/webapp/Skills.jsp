@@ -33,21 +33,25 @@
             <h5 class="header col s12 light">Seleziona una soft skill per l'argomento ${id_topic}</h5>
           </div>
           <div class="row">
-            <div class="col s12 m6">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/etica-ia.jpg">
-                        <span class="card-title">Seguire un codice di condotta etico</span>
-                        <a
-                            href="/students?id_topic=${id_topic}&id_skill=1"
-                            class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">add</i>
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <p>Carry out workplace activities according to accepted principles of right and wrong, including fairness, transparency and impartiality in work practices and conduct towards other people.</p>
+              <c:forEach var="skill" items="${skills}">
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="${skill['image']}">
+                            <span class="card-title">
+                                <span style="background-color: #D13; padding: 2px;">${skill['title']}</span>
+                            </span>
+                            <a
+                                href="/students?id_topic=${id_topic}&id_skill=${skill['id_skill']}"
+                                class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">add</i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <p>${skill['description']}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
   </div>

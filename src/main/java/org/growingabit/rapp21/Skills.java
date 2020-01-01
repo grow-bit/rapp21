@@ -28,7 +28,14 @@ import java.util.Properties;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import javax.servlet.*;
+
+import java.io.*;
 import com.google.appengine.api.datastore.*;
+import com.google.appengine.api.datastore.Query.*;
+import java.util.*;
+
+import org.json.simple.*;
+import org.json.simple.parser.*;
 
 // With @WebServlet annotation the webapp/WEB-INF/web.xml is no longer required.
 @WebServlet(
@@ -57,11 +64,83 @@ public class Skills extends HttpServlet {
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
-        Integer id_topic = Integer.parseInt(req.getParameter("id_topic"));
+        Long id_topic = Long.parseLong(req.getParameter("id_topic"));
         req.setAttribute("id_topic", id_topic);
+
+        req.setAttribute("skills", this.getSkills(id_topic));
 
         RequestDispatcher rd = req.getRequestDispatcher("Skills.jsp");
         rd.forward(req, resp);
+    }
+
+    private void initSkills() throws ParseException, FileNotFoundException, IOException {
+        JSONParser parser = new JSONParser();
+
+        JSONObject topicsDump = (JSONObject) parser.parse(
+            new InputStreamReader(this.getServletContext().getResourceAsStream("/WEB-INF/classes/Skills.json"))
+        );
+
+        JSONArray topics = (JSONArray) topicsDump.get("skills");
+
+        List<Entity> entities = new ArrayList<Entity>();
+        Entity entity = null;
+        for (Object t : topics) {
+            JSONObject topic = (JSONObject) t;
+            String title = (String) topic.get("title");
+            String description = (String) topic.get("description");
+            String image = (String) topic.get("image");
+            String id_esco = (String) topic.get("id_esco");
+            Long id_topic = (Long) topic.get("id_topic");
+            Long id_skill = (Long) topic.get("id_skill");
+            entity = new Entity("RApP21Skill", id_skill);
+            entity.setProperty("title", title);
+            entity.setProperty("description", description);
+            entity.setProperty("image", image);
+            entity.setProperty("id_topic", id_topic);
+            entity.setProperty("id_skill", id_topic);
+            entity.setProperty("id_esco", id_esco);
+            entities.add(entity);
+        }
+
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        datastore.put(entities);
+    }
+
+    private List<Map<String, Object>> getSkills(Long id_topic) throws IOException {
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+
+        com.google.appengine.api.datastore.Query.Filter idTopicFilter = new FilterPredicate("id_topic", FilterOperator.EQUAL, id_topic);
+        Query query = new Query("RApP21Skill")
+            .setFilter(idTopicFilter)
+            .addSort("title", SortDirection.ASCENDING);
+        PreparedQuery preparedQuery = datastore.prepare(query);
+        QueryResultIterator<Entity> results = preparedQuery.asQueryResultIterator();
+        if (!results.hasNext()) {
+            try {
+                this.initSkills();
+            } catch (Exception e) {
+                throw new IOException(e);
+            }
+            preparedQuery = datastore.prepare(query);
+            results = preparedQuery.asQueryResultIterator();
+        }
+
+        List<Map<String,Object>> skills = new ArrayList<Map<String,Object>>();
+        Map<String, Object> skill = null;
+        Entity entity = null;
+
+        while (results.hasNext()) {  // We still have data
+            entity = results.next();      // Add the Book to the List
+            skill = new HashMap<String, Object>();
+            Map<String, Object> props = entity.getProperties();
+            for (Map.Entry<String, Object> prop : props.entrySet()) {
+                skill.put(prop.getKey(), prop.getValue());
+            }
+
+            skills.add(skill);
+        }
+
+        return skills;
     }
 }
 // [END example]
