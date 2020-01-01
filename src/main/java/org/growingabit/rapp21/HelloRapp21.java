@@ -51,9 +51,7 @@ public class HelloRapp21 extends HttpServlet {
             RequestDispatcher rd = req.getRequestDispatcher("HelloRapp21.jsp");
             rd.forward(req, resp);
         } else {
-        resp.getWriter()
-            .println(
-                "<p>Please <a href=\"" + userService.createLoginURL(thisUrl) + "\">sign in</a>.</p>");
+            resp.sendRedirect(userService.createLoginURL(thisUrl));
         }
     }
 }
