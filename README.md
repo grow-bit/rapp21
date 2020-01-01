@@ -27,7 +27,12 @@ detailed instructions.
 ## Maven
 ### Running locally
 
-    mvn appengine:run
+    sudo apt-get install inotify-tools
+
+    run mvn package first
+    then run ./mvn-package-watcher
+    
+    in onother shell run mvn appengine:run
 
 To use vist: http://localhost:8080/
 
