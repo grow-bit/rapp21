@@ -1,0 +1,484 @@
+{
+    "skills" : [
+        {
+            "title": "valutare dati, informazioni e contenuti digitali",
+            "description": "Analyse, compare and critically evaluate the credibility and reliability of sources of data, information and digital content. Analyse, interpret and critically evaluate the data, information and digital content.",
+            "id_topic": 1,
+            "id_skill": 1,
+            "id_esco": "1d6c7de4-350e-4868-a47b-333b4b0d9650",
+            "image": "https://picsum.photos/seed/1d6c7de4-350e-4868-a47b-333b4b0d9650/400/300?blur"
+        },
+        {
+            "title": "valutare informazioni",
+            "description": "Make and defend judgements based on internal evidence and external criteria.",
+            "id_topic": 1,
+            "id_skill": 2,
+            "id_esco": "7dd94ad3-13d6-43fe-8b94-51fcbf67ced9",
+            "image": "https://picsum.photos/seed/7dd94ad3-13d6-43fe-8b94-51fcbf67ced9/400/300?blur"
+        },
+        {
+            "title": "seguire un codice di condotta etico",
+            "description": "Carry out workplace activities according to accepted principles of right and wrong, including fairness, transparency and impartiality in work practices and conduct towards other people.",
+            "id_topic": 1,
+            "id_skill": 3,
+            "id_esco": "b2f925ed-3ebd-4f78-b98e-d5d4678e83b5",
+            "image": "https://picsum.photos/seed/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5/400/300?blur"
+        },
+        {
+            "title": "prendere decisioni",
+            "description": "Make a choice from several alternative possibilities.",
+            "id_topic": 1,
+            "id_skill": 4,
+            "id_esco": "d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47",
+            "image": "https://picsum.photos/seed/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47/400/300?blur"
+        },
+        {
+            "title": "dimostrare competenze a livello interculturale",
+            "description": "Understand and respect people who are perceived to have different cultural affinities, and respond effectively and respectfully to them.",
+            "id_topic": 2,
+            "id_skill": 5,
+            "id_esco": "c10d5d87-36cf-42f5-8a12-e560fb5f4af8",
+            "image": "https://picsum.photos/seed/c10d5d87-36cf-42f5-8a12-e560fb5f4af8/400/300?blur"
+        },
+        {
+            "title": "applicare le pratiche antioppressive",
+            "description": "Identify oppression in societies, economies, cultures, and groups, acting as a professional in an non-oppressive way, enabling service users to take action to improve their lives and enabling citizens to change their environment in accordance with their own interests.",
+            "id_topic": 2,
+            "id_skill": 6,
+            "id_esco": "000709ed-2be5-4193-b056-45a97698d828",
+            "image": "https://picsum.photos/seed/000709ed-2be5-4193-b056-45a97698d828/400/300?blur"
+        },
+        {
+            "title": "sviluppare banche dati terminologiche",
+            "description": "Collect and submit terms after verifying their legitimacy in order to build up terminology databases on an array of domains.",
+            "id_topic": 2,
+            "id_skill": 7,
+            "id_esco": "0121ac3b-775b-4faf-b86d-0078623674bc",
+            "image": "https://picsum.photos/seed/0121ac3b-775b-4faf-b86d-0078623674bc/400/300?blur"
+        },
+        {
+            "title": "analizzare le tendenze culturali",
+            "description": "Keep up to date with popular cultural trends such as pop culture, cultural and social slang.",
+            "id_topic": 2,
+            "id_skill": 8,
+            "id_esco": "03bc5f23-4317-41c2-9528-2db5c3c87b85",
+            "image": "https://picsum.photos/seed/03bc5f23-4317-41c2-9528-2db5c3c87b85/400/300?blur"
+        },
+        {
+            "title": "individuare modelli statistici",
+            "description": "Analyse statistical data in order to find patterns and trends in the data or between variables.",
+            "id_topic": 2,
+            "id_skill": 9,
+            "id_esco": "06670261-ea6b-4b52-a915-c7d4ff837f74",
+            "image": "https://picsum.photos/seed/06670261-ea6b-4b52-a915-c7d4ff837f74/400/300?blur"
+        },
+        {
+            "title": "sostenere la parità di genere",
+            "description": "Strive for equal benefit for both sexes by assessing the implications for women and men of any planned action, including legislation, policies or programmes, in all areas and at all levels in the workplace.",
+            "id_topic": 3,
+            "id_skill": 10,
+            "id_esco": "2e227d5d-649b-48dc-99ca-2389bbc1140f",
+            "image": "https://picsum.photos/seed/2e227d5d-649b-48dc-99ca-2389bbc1140f/400/300?blur"
+        },
+        {
+            "title": "sostenere la diversità culturale",
+            "description": "Take an active role in promoting social justice and confronting discrimination in the workplace based on cultural identity.",
+            "id_topic": 3,
+            "id_skill": 11,
+            "id_esco": "4e2ce047-1912-468f-8c04-ab7374c4a761",
+            "image": "https://picsum.photos/seed/4e2ce047-1912-468f-8c04-ab7374c4a761/400/300?blur"
+        },
+        {
+            "title": "uso di tecnologie digitali",
+            "description": "Be able to avoid health-risks and threats to physical and psychological well-being while using digital technologies. Be able to protect oneself and others from possible dangers in digital environments (e.g. cyber bullying). Be aware of digital technologies for social well-being and social inclusion.",
+            "id_topic": 3,
+            "id_skill": 12,
+            "id_esco": "d1ed5b3a-cab5-4c5d-baf8-0214998b58fb",
+            "image": "https://picsum.photos/seed/d1ed5b3a-cab5-4c5d-baf8-0214998b58fb/400/300?blur"
+        },
+        {
+            "title": "applicare i principi diplomatici",
+            "description": "Apply the processes involved in the creation of international treaties by conducting negotiations between representatives of different countries, protecting the home government's interests, and facilitating compromise.",
+            "id_topic": 3,
+            "id_skill": 13,
+            "id_esco": "0023e7a5-43da-4b68-bee3-726ef21f986d",
+            "image": "https://picsum.photos/seed/0023e7a5-43da-4b68-bee3-726ef21f986d/400/300?blur"
+        },
+        {
+            "title": "usare le tecnologie digitali in modo creativo",
+            "description": "Use digital tools and technologies to create knowledge and to innovate processes and products. Engage individually and collectively in cognitive processing to understand and resolve conceptual problems and problem situations in digital environments.",
+            "id_topic": 4,
+            "id_skill": 14,
+            "id_esco": "1a4cc54f-1e53-442b-a6d2-1682dc8ef8f9",
+            "image": "https://picsum.photos/seed/1a4cc54f-1e53-442b-a6d2-1682dc8ef8f9/400/300?blur"
+        },
+        {
+            "title": "impatto delle tecnologie digitali",
+            "description": "Be aware of the environmental impact of digital technologies and their use.",
+            "id_topic": 4,
+            "id_skill": 15,
+            "id_esco": "c4ba12d1-4698-42fa-8abb-789462ea2586",
+            "image": "https://picsum.photos/seed/c4ba12d1-4698-42fa-8abb-789462ea2586/400/300?blur"
+        },
+        {
+            "title": "pensare in modo creativo",
+            "description": "Generate new ideas or combine existing ones to develop innovative, novel solutions.",
+            "id_topic": 4,
+            "id_skill": 16,
+            "id_esco": "c624c6a3-b0ba-4a31-a296-0d433fe47e41",
+            "image": "https://picsum.photos/seed/c624c6a3-b0ba-4a31-a296-0d433fe47e41/400/300?blur"
+        },
+        {
+            "title": "utilizzare servizi elettronici",
+            "description": "Use public and private online services, such as e-commerce, e-governance, e-banking, e-health services.",
+            "id_topic": 4,
+            "id_skill": 17,
+            "id_esco": "d908a818-70ef-419e-9d60-8f459114cb2f",
+            "image": "https://picsum.photos/seed/d908a818-70ef-419e-9d60-8f459114cb2f/400/300?blur"
+        },
+        {
+            "title": "consultare, cercare e filtrare dati, informazioni e contenuti digitali",
+            "description": "Articulate information needs, search for data, information and content in digital environments, access them and navigate between them. Create and update personal search strategies.",
+            "id_topic": 4,
+            "id_skill": 18,
+            "id_esco": "e439742d-558d-4f52-885e-afdc740b48cf",
+            "image": "https://picsum.photos/seed/e439742d-558d-4f52-885e-afdc740b48cf/400/300?blur"
+        },
+        {
+            "title": "eseguire l'analisi dei dati online",
+            "description": "Analyse online experiences and online data for purposes of understanding user behaviour, triggers of online attention, and other factors that could optimise webpage development and exposure.",
+            "id_topic": 4,
+            "id_skill": 19,
+            "id_esco": "062320e5-79d1-45e8-8b7e-5deeb53279a2",
+            "image": "https://picsum.photos/seed/062320e5-79d1-45e8-8b7e-5deeb53279a2/400/300?blur"
+        },
+        {
+            "title": "risolvere i problemi tecnici",
+            "description": "Identify technical problems when operating devices and using digital environments, and solve them (from trouble-shooting to solving more complex problems).",
+            "id_topic": 5,
+            "id_skill": 20,
+            "id_esco": "14832d87-2f2f-4895-b290-e4760ebae42a",
+            "image": "https://picsum.photos/seed/14832d87-2f2f-4895-b290-e4760ebae42a/400/300?blur"
+        },
+        {
+            "title": "programmazione informatica",
+            "description": "The techniques and principles of software development, such as analysis, algorithms, coding, testing and compiling of programming paradigms (e.g. object oriented programming, functional programming) and of programming languages.",
+            "id_topic": 5,
+            "id_skill": 21,
+            "id_esco": "21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+            "image": "https://picsum.photos/seed/21d2f96d-35f7-4e3f-9745-c533d2dd6e97/400/300?blur"
+        },
+        {
+            "title": "utilizzare sistemi operativi di dispositivi digitali",
+            "description": "Use the functions and tools provided by the operating system to access resources and run applications.",
+            "id_topic": 5,
+            "id_skill": 22,
+            "id_esco": "35f1be97-06c4-4367-a067-7e0e94f2fa70",
+            "image": "https://picsum.photos/seed/35f1be97-06c4-4367-a067-7e0e94f2fa70/400/300?blur"
+        },
+        {
+            "title": "utilizzare banche dati",
+            "description": "Use software tools for managing and organising data in a structured environment which consists of attributes, tables and relationships in order to query and modify the stored data.",
+            "id_topic": 5,
+            "id_skill": 23,
+            "id_esco": "4463a721-69f3-413d-8321-43e3af13a4f1",
+            "image": "https://picsum.photos/seed/4463a721-69f3-413d-8321-43e3af13a4f1/400/300?blur"
+        },
+        {
+            "title": "gestire dati, informazioni e contenuti digitali",
+            "description": "Organise, store and retrieve data, information and content in digital environments. Organise and process them in a structured environment.",
+            "id_topic": 5,
+            "id_skill": 24,
+            "id_esco": "4d97e3c3-f335-47cc-a4ee-0d779fd42222",
+            "image": "https://picsum.photos/seed/4d97e3c3-f335-47cc-a4ee-0d779fd42222/400/300?blur"
+        },
+        {
+            "title": "utilizzare attrezzature e strumenti matematici",
+            "description": "Use portable electronic device to perform both basic and complex operations of arithmetic.",
+            "id_topic": 5,
+            "id_skill": 25,
+            "id_esco": "db77825e-0f3e-47d0-abdb-356794484272",
+            "image": "https://picsum.photos/seed/db77825e-0f3e-47d0-abdb-356794484272/400/300?blur"
+        },
+        {
+            "title": "utilizzare software di organizzazione personale",
+            "description": "Use software tools, such as calendars, to-do lists, time-tracking, contact lists, to help in managing personal efficiency.",
+            "id_topic": 5,
+            "id_skill": 26,
+            "id_esco": "fdf15b35-9028-4acb-bfd2-43f00a015cd9",
+            "image": "https://picsum.photos/seed/fdf15b35-9028-4acb-bfd2-43f00a015cd9/400/300?blur"
+        },
+        {
+            "title": "schemi circuitali",
+            "description": "Read and comprehend circuit diagrams showing the connections between the devices, such as power and signal connections.",
+            "id_topic": 5,
+            "id_skill": 27,
+            "id_esco": "02c71cde-f513-43da-8952-0974763c7568",
+            "image": "https://picsum.photos/seed/02c71cde-f513-43da-8952-0974763c7568/400/300?blur"
+        },
+        {
+            "title": "configurare apparecchiature elettroniche",
+            "description": "Ensure that electronic equipment is set up correctly.",
+            "id_topic": 5,
+            "id_skill": 28,
+            "id_esco": "03459358-3f0f-4b13-a143-890e2da798d3",
+            "image": "https://picsum.photos/seed/03459358-3f0f-4b13-a143-890e2da798d3/400/300?blur"
+        },
+        {
+            "title": "principi di intelligenza artificiale",
+            "description": "The artificial intelligence theories, applied principles, architectures and systems, such as intelligent agents, multi-agent systems, expert systems, rule-based systems, neural networks, ontologies and cognition theories.",
+            "id_topic": 1,
+            "id_skill": 29,
+            "id_esco": "e465a154-93f7-4973-9ce1-31659fe16dd2",
+            "image": "https://picsum.photos/seed/e465a154-93f7-4973-9ce1-31659fe16dd2/400/300?blur"
+        },
+        {
+            "title": "interagire con gli altri",
+            "description": "Engage with others face-to-face in a wide range of situations, using strategies appropriate to context and purpose.",
+            "id_topic": 6,
+            "id_skill": 30,
+            "id_esco": "09e28145-e205-4b7a-8b3b-5c4876396069",
+            "image": "https://picsum.photos/seed/09e28145-e205-4b7a-8b3b-5c4876396069/400/300?blur"
+        },
+        {
+            "title": "impegnarsi",
+            "description": "Show commitment to do something that is difficult and requires hard work.",
+            "id_topic": 6,
+            "id_skill": 31,
+            "id_esco": "0ab5084c-cbd0-46d5-b61f-f1b8e9cc0ca0",
+            "image": "https://picsum.photos/seed/0ab5084c-cbd0-46d5-b61f-f1b8e9cc0ca0/400/300?blur"
+        },
+        {
+            "title": "utilizzare tecniche di interrogazione",
+            "description": "Formulate questions appropriate to the purpose, such as eliciting accurate information or supporting the learning process.",
+            "id_topic": 6,
+            "id_skill": 32,
+            "id_esco": "0f2eee6f-2203-4cc8-9d79-854d2d5d8131",
+            "image": "https://picsum.photos/seed/0f2eee6f-2203-4cc8-9d79-854d2d5d8131/400/300?blur"
+        },
+        {
+            "title": "rispettare gli impegni",
+            "description": "Perform one's tasks in a self-disciplined, reliable and goal-oriented manner.",
+            "id_topic": 6,
+            "id_skill": 33,
+            "id_esco": "113b4428-0a31-4199-8496-070af7854b91",
+            "image": "https://picsum.photos/seed/113b4428-0a31-4199-8496-070af7854b91/400/300?blur"
+        },
+        {
+            "title": "gestire la frustrazione",
+            "description": "Stay calm and react in a constructive way to own or others' anger or when faced with obstacles or complaints.",
+            "id_topic": 6,
+            "id_skill": 34,
+            "id_esco": "1d1fedcb-4995-44ac-90f5-f31a157ce512",
+            "image": "https://picsum.photos/seed/1d1fedcb-4995-44ac-90f5-f31a157ce512/400/300?blur"
+        },
+        {
+            "title": "dimostrare entusiasmo",
+            "description": "Use software tools to create digital presentations which combine various elements, such as graphs, images, text and other multimedia.",
+            "id_topic": 6,
+            "id_skill": 35,
+            "id_esco": "234aeb8d-56c3-4531-9193-1c5e6a8d16cb",
+            "image": "https://picsum.photos/seed/234aeb8d-56c3-4531-9193-1c5e6a8d16cb/400/300?blur"
+        },
+        {
+            "title": "utilizzare software di presentazione",
+            "description": "Use software tools to create digital presentations which combine various elements, such as graphs, images, text and other multimedia.",
+            "id_topic": 6,
+            "id_skill": 36,
+            "id_esco": "234aeb8d-56c3-4531-9193-1c5e6a8d16cb",
+            "image": "https://picsum.photos/seed/234aeb8d-56c3-4531-9193-1c5e6a8d16cb/400/300?blur"
+        },
+        {
+            "title": "identificare le lacune nelle competenze digitali",
+            "description": "Understand where one’s own digital competence needs to be improved or updated. Be able to support others with their digital competence development. Seek opportunities for self-development and keep up-to-date with the digital evolution.",
+            "id_topic": 6,
+            "id_skill": 37,
+            "id_esco": "238343b1-7b51-42b3-a9ed-cf24d3a236e7",
+            "image": "https://picsum.photos/seed/238343b1-7b51-42b3-a9ed-cf24d3a236e7/400/300?blur"
+        },
+        {
+            "title": "utilizzare il linguaggio del corpo",
+            "description": "Use and understand body language, gestures and other paralinguistic cues.",
+            "id_topic": 6,
+            "id_skill": 38,
+            "id_esco": "3481d400-2eaa-4ab3-bb06-5f45b4380052",
+            "image": "https://picsum.photos/seed/3481d400-2eaa-4ab3-bb06-5f45b4380052/400/300?blur"
+        },
+        {
+            "title": "dimostrare curiosità",
+            "description": "Show a lively interest in novelty, an openness to experience, find subjects and topics fascinating, actively explore and discover new areas.",
+            "id_topic": 6,
+            "id_skill": 39,
+            "id_esco": "429062f1-a958-43ea-83dd-4e1af078c156",
+            "image": "https://picsum.photos/seed/429062f1-a958-43ea-83dd-4e1af078c156/400/300?blur"
+        },
+        {
+            "title": "utilizzare strumenti online per collaborare",
+            "description": "Use online resources such as online meeting tools, VoIP conference calling, concurrent file editing, to co-create, share content and collaborate from remote locations.",
+            "id_topic": 6,
+            "id_skill": 40,
+            "id_esco": "580660a6-5d3a-421d-a54f-d85b706c2b2f",
+            "image": "https://picsum.photos/seed/580660a6-5d3a-421d-a54f-d85b706c2b2f/400/300?blur"
+        },
+        {
+            "title": "integrare e rielaborare i contenuti digitali",
+            "description": "Modify, refine, improve and integrate information and content into an existing body of knowledge to create new, original and relevant content and knowledge.",
+            "id_topic": 6,
+            "id_skill": 41,
+            "id_esco": "5af49836-2269-46d9-87b9-0d3140c6c22e",
+            "image": "https://picsum.photos/seed/5af49836-2269-46d9-87b9-0d3140c6c22e/400/300?blur"
+        },
+        {
+            "title": "rivolgersi a un pubblico",
+            "description": "Speak in a structured, deliberate and face-to-face manner to a group of listeners to inform, influence, or entertain them.",
+            "id_topic": 6,
+            "id_skill": 42,
+            "id_esco": "609a8ac1-9d29-4237-9886-596dbbe7ca8a",
+            "image": "https://picsum.photos/seed/609a8ac1-9d29-4237-9886-596dbbe7ca8a/400/300?blur"
+        },
+        {
+            "title": "lavorare in gruppo",
+            "description": "Work confidently within a group with each doing their part in the service of the whole.",
+            "id_topic": 6,
+            "id_skill": 43,
+            "id_esco": "60c78287-22eb-4103-9c8c-28deaa460da0",
+            "image": "https://picsum.photos/seed/60c78287-22eb-4103-9c8c-28deaa460da0/400/300?blur"
+        },
+        {
+            "title": "istruire gli altri",
+            "description": "Guide or teach others by providing relevant knowledge and support.",
+            "id_topic": 6,
+            "id_skill": 44,
+            "id_esco": "699e7c26-6502-4e78-a823-3656ff5a5b8b",
+            "image": "https://picsum.photos/seed/699e7c26-6502-4e78-a823-3656ff5a5b8b/400/300?blur"
+        },
+        {
+            "title": "guidare gli altri",
+            "description": "Guide and direct others towards a common goal, often in a group or team.",
+            "id_topic": 6,
+            "id_skill": 45,
+            "id_esco": "75d8e5d9-bef3-418b-9011-01bff9f27207",
+            "image": "https://picsum.photos/seed/75d8e5d9-bef3-418b-9011-01bff9f27207/400/300?blur"
+        },
+        {
+            "title": "sviluppare strategie per risolvere i problemi",
+            "description": "Develop specific goals and plans to prioritise, organise, and accomplish work.",
+            "id_topic": 6,
+            "id_skill": 46,
+            "id_esco": "7a8fb784-67fa-41e9-a75c-6b491d91f800",
+            "image": "https://picsum.photos/seed/7a8fb784-67fa-41e9-a75c-6b491d91f800/400/300?blur"
+        },
+        {
+            "title": "dimostrare la volontà di apprendere",
+            "description": "Show a positive attitude towards new and challenging demands that can only be met via lifelong learning.",
+            "id_topic": 6,
+            "id_skill": 47,
+            "id_esco": "9bf266a6-188b-4d17-a22f-2f266d76832b",
+            "image": "https://picsum.photos/seed/9bf266a6-188b-4d17-a22f-2f266d76832b/400/300?blur"
+        },
+        {
+            "title": "accettare critiche costruttive",
+            "description": "React to valid and well-reasoned opinions about one's work in a positive manner.",
+            "id_topic": 6,
+            "id_skill": 48,
+            "id_esco": "a311ab20-75df-4aff-8016-3142c5659d30",
+            "image": "https://picsum.photos/seed/a311ab20-75df-4aff-8016-3142c5659d30/400/300?blur"
+        },
+        {
+            "title": "utilizzare strategie di apprendimento",
+            "description": "Use different channels of perception, learning styles, strategies and methods to acquire knowledge, know-how, skills and competences.",
+            "id_topic": 6,
+            "id_skill": 49,
+            "id_esco": "a44c0ed6-68b1-457a-9c6d-ea8487bdfeb2",
+            "image": "https://picsum.photos/seed/a44c0ed6-68b1-457a-9c6d-ea8487bdfeb2/400/300?blur"
+        },
+        {
+            "title": "gestire il tempo",
+            "description": "Plan the time sequence of events, programmes and activities, as well as the work of others.",
+            "id_topic": 6,
+            "id_skill": 50,
+            "id_esco": "d9013e0e-e937-43d5-ab71-0e917ee882b8",
+            "image": "https://picsum.photos/seed/d9013e0e-e937-43d5-ab71-0e917ee882b8/400/300?blur"
+        },
+        {
+            "title": "motivare gli altri",
+            "description": "Direct other people's behaviour by providing them with a convincing reason for action.",
+            "id_topic": 6,
+            "id_skill": 51,
+            "id_esco": "e2d44a9b-f28c-489e-9861-b654b5ded507",
+            "image": "https://picsum.photos/seed/e2d44a9b-f28c-489e-9861-b654b5ded507/400/300?blur"
+        },
+        {
+            "title": "insistere",
+            "description": "Stick to one's tasks in spite of fatigue or frustration.",
+            "id_topic": 6,
+            "id_skill": 52,
+            "id_esco": "f60b0a50-2e7b-46f8-9b9c-2809b10991f9",
+            "image": "https://picsum.photos/seed/f60b0a50-2e7b-46f8-9b9c-2809b10991f9/400/300?blur"
+        },
+        {
+            "title": "memorizzare informazioni",
+            "description": "Store information such as words, numbers, pictures and procedures for later retrieval.",
+            "id_topic": 6,
+            "id_skill": 53,
+            "id_esco": "fa46a48d-9cb9-422d-afab-1047654dbcdd",
+            "image": "https://picsum.photos/seed/fa46a48d-9cb9-422d-afab-1047654dbcdd/400/300?blur"
+        },
+        {
+            "title": "contestualizzare gli avvenimenti",
+            "description": "Provide substantial context to national or international news stories to explain things in more detail.",
+            "id_topic": 6,
+            "id_skill": 54,
+            "id_esco": "02c462b7-b93b-44a7-ba3a-9d3b7a163f51",
+            "image": "https://picsum.photos/seed/02c462b7-b93b-44a7-ba3a-9d3b7a163f51/400/300?blur"
+        },
+        {
+            "title": "struttura dell'informazione",
+            "description": "The type of infrastructure which defines the format of data: semi-structured, unstructured and structured.",
+            "id_topic": 5,
+            "id_skill": 55,
+            "id_esco": "03ff0d53-573a-47a0-a0ad-1995815a4339",
+            "image": "https://picsum.photos/seed/03ff0d53-573a-47a0-a0ad-1995815a4339/400/300?blur"
+        },
+        {
+            "title": "dare consigli agli altri",
+            "description": "Offer suggestions about the best course of action.",
+            "id_topic": 6,
+            "id_skill": 56,
+            "id_esco": "045f71e6-0699-4169-8a54-9c6b96f3174d",
+            "image": "https://picsum.photos/seed/045f71e6-0699-4169-8a54-9c6b96f3174d/400/300?blur"
+        },
+        {
+            "title": "fornire documentazione tecnica",
+            "description": "Prepare documentation for existing and upcoming products or services, describing their functionality and composition in such a way that it is understandable for a wide audience without technical background and compliant with defined requirements and standards. Keep documentation up to date.",
+            "id_topic": 6,
+            "id_skill": 57,
+            "id_esco": "04dfd9fb-e0cf-40f6-96c6-9d2280c4347e",
+            "image": "https://picsum.photos/seed/04dfd9fb-e0cf-40f6-96c6-9d2280c4347e/400/300?blur"
+        },
+        {
+            "title": "esibirsi dal vivo",
+            "description": "Perform in front of live audiences.",
+            "id_topic": 6,
+            "id_skill": 58,
+            "id_esco": "04e6474d-f6fd-4e60-9191-24faae8ba0bb",
+            "image": "https://picsum.photos/seed/04e6474d-f6fd-4e60-9191-24faae8ba0bb/400/300?blur"
+        },
+        {
+            "title": "produrre i materiali per il processo decisionale",
+            "description": "Compile relevant data, write reports and occasionally prepare presentations to communicate information that will help the business management team to take decisions.",
+            "id_topic": 6,
+            "id_skill": 59,
+            "id_esco": "05bd9f18-370a-4a88-98c7-473cffb7b2ca",
+            "image": "https://picsum.photos/seed/05bd9f18-370a-4a88-98c7-473cffb7b2ca/400/300?blur"
+        },
+        {
+            "title": "creare soluzioni a problemi",
+            "description": "Provide substantial context to national or international news stories to explain things in more detail.",
+            "id_topic": 6,
+            "id_skill": 60,
+            "id_esco": "03b9b491-fc9b-4868-914a-bf7cd47b5041",
+            "image": "https://picsum.photos/seed/03b9b491-fc9b-4868-914a-bf7cd47b5041/400/300?blur"
+        }
+    ]
+}
