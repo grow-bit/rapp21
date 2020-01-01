@@ -33,21 +33,23 @@
             <h5 class="header col s12 light">Seleziona un argomento</h5>
           </div>
           <div class="row">
-            <div class="col s12 m6">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/etica-ia.jpg">
-                        <span class="card-title">Etica IA</span>
-                        <a
-                            href="/skills?id_topic=1"
-                            class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">add</i>
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <p>Descrizione Etica IA</p>
+            <c:forEach var="topic" items="${topics}">
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="${topic['image']}">
+                            <span class="card-title">${topic['title']}</span>
+                            <a
+                                href="/skills?id_topic=${topic['id_topic']}"
+                                class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">add</i>
+                            </a>
+                        </div>
+                        <div class="card-content">
+                            <p>${topic['description']}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
   </div>
