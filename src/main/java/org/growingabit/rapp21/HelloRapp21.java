@@ -26,9 +26,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
+import javax.servlet.*;
 
 // With @WebServlet annotation the webapp/WEB-INF/web.xml is no longer required.
 @WebServlet(
@@ -40,20 +39,17 @@ public class HelloRapp21 extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest req, HttpServletResponse resp)
-      throws IOException {
+      throws ServletException, IOException {
         UserService userService = UserServiceFactory.getUserService();
 
         String thisUrl = req.getRequestURI();
 
         resp.setContentType("text/html");
         if (req.getUserPrincipal() != null) {
-        resp.getWriter()
-            .println(
-                "<p>Hello, "
-                    + req.getUserPrincipal().getName()
-                    + "!  You can <a href=\""
-                    + userService.createLogoutURL(thisUrl)
-                    + "\">sign out</a>.</p>");
+            req.setAttribute("username", req.getUserPrincipal().getName());
+            req.setAttribute("logoutUrl", userService.createLogoutURL(thisUrl));
+            RequestDispatcher rd = req.getRequestDispatcher("HelloRapp21.jsp");
+            rd.forward(req, resp);
         } else {
         resp.getWriter()
             .println(
