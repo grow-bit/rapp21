@@ -66,6 +66,7 @@ public class Skills extends HttpServlet {
 
         Long id_topic = Long.parseLong(req.getParameter("id_topic"));
         req.setAttribute("id_topic", id_topic);
+        req.setAttribute("topic_title", this.getTopicTitle(id_topic));
 
         req.setAttribute("skills", this.getSkills(id_topic));
 
@@ -104,6 +105,16 @@ public class Skills extends HttpServlet {
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         datastore.put(entities);
+    }
+
+    private String getTopicTitle(Long id_topic) {
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        try {
+            Entity topic = datastore.get(KeyFactory.createKey("RApP21Topic", id_topic));
+            return (String) topic.getProperty("title");
+        } catch (EntityNotFoundException e) {
+            return "";
+        }
     }
 
     private List<Map<String, Object>> getSkills(Long id_topic) throws IOException {

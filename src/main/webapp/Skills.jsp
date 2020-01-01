@@ -30,7 +30,7 @@
   <div class="section no-pad-bot" id="index-banner">
       <div class="container">
           <div class="row center">
-            <h5 class="header col s12 light">Seleziona una soft skill per l'argomento ${id_topic}</h5>
+            <h5 class="header col s12 light">Seleziona una soft skill per l'argomento <b>${topic_title}</b></h5>
           </div>
           <div class="row">
               <c:forEach var="skill" items="${skills}">
