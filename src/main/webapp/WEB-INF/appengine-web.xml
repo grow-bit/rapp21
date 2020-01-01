@@ -19,8 +19,8 @@
     <runtime>java8</runtime>
     <threadsafe>true</threadsafe>
     <static-files>
-        <include path="/images/**.jpg" >
-        </include>
+        <include path="/images/**.jpg" />
+        <include path="/images/**.png" />
     </static-files>
     <resource-files>
         <include path="/**.json" />
