@@ -1,0 +1,4 @@
+- kind: RApP21Skill
+  properties:
+  - name: id_topic
+  - name: title
