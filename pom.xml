@@ -21,7 +21,7 @@ limitations under the License.
   <!-- REQUIRED : your application must be packed as a .war to deploy on App Engine Standard -->
   <packaging>war</packaging>
 
-  <groupId>com.example.appengine-j8</groupId>
+  <groupId>org.growingabit.rapp21</groupId>
   <artifactId>rapp21</artifactId>
   <version>1.0-SNAPSHOT</version>
 
