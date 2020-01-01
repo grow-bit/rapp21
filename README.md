@@ -29,8 +29,7 @@ detailed instructions.
 
     sudo apt-get install inotify-tools
 
-    run mvn package first
-    then run ./mvn-package-watcher
+    run ./mvn-package-watcher
     
     in onother shell run mvn appengine:run
 
