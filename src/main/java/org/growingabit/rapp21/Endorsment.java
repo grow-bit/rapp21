@@ -23,7 +23,7 @@ import com.google.appengine.api.users.UserServiceFactory;
 import com.google.appengine.api.utils.SystemProperty;
 
 import java.io.IOException;
-import java.util.Properties;
+import java.util.*;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -45,9 +45,12 @@ public class Endorsment extends HttpServlet {
 
         String thisUrl = req.getRequestURI();
 
+        String userName = "";
+
         resp.setContentType("text/html");
         if (req.getUserPrincipal() != null) {
-            req.setAttribute("username", req.getUserPrincipal().getName());
+            userName = req.getUserPrincipal().getName();
+            req.setAttribute("username", userName);
             req.setAttribute("logoutUrl", userService.createLogoutURL(thisUrl));
         } else {
             resp.sendRedirect(userService.createLoginURL(thisUrl));
@@ -68,6 +71,8 @@ public class Endorsment extends HttpServlet {
         Long id_student = Long.parseLong(req.getParameter("id_student"));
         req.setAttribute("id_student", id_student);
         req.setAttribute("student_name", this.getStudentName(id_student));
+
+        this.saveEndorsment(id_topic, id_skill, id_student, userName);
 
         RequestDispatcher rd = req.getRequestDispatcher("Endorsment.jsp");
         rd.forward(req, resp);
@@ -95,6 +100,22 @@ public class Endorsment extends HttpServlet {
         } catch (EntityNotFoundException e) {
             return "";
         }
+    }
+
+
+    private void saveEndorsment(Long id_topic, Long id_skill, Long id_student, String professor) {
+
+        String endorsmentKey = professor + "_" + id_topic + "_" + id_skill + "_" + id_student;
+        Entity endorsment = new Entity(KeyFactory.createKey("RApP21Endorsment", endorsmentKey));
+        endorsment.setProperty("id_topic", id_topic);
+        endorsment.setProperty("id_skill", id_skill);
+        endorsment.setProperty("id_student", id_student);
+        endorsment.setProperty("professor", professor);
+        endorsment.setProperty("updated_at", new Date());
+
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+
+        datastore.put(endorsment);
     }
 }
 // [END example]
