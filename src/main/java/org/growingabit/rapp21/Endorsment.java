@@ -57,17 +57,44 @@ public class Endorsment extends HttpServlet {
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
-        Integer id_topic = Integer.parseInt(req.getParameter("id_topic"));
+        Long id_topic = Long.parseLong(req.getParameter("id_topic"));
         req.setAttribute("id_topic", id_topic);
+        req.setAttribute("topic_title", this.getTopicTitle(id_topic));
 
-        Integer id_skill = Integer.parseInt(req.getParameter("id_skill"));
+        Long id_skill = Long.parseLong(req.getParameter("id_skill"));
         req.setAttribute("id_skill", id_skill);
+        req.setAttribute("skill_title", this.getSkillTitle(id_skill));
 
-        Integer id_student = Integer.parseInt(req.getParameter("id_student"));
+        Long id_student = Long.parseLong(req.getParameter("id_student"));
         req.setAttribute("id_student", id_student);
+        req.setAttribute("student_name", this.getStudentName(id_student));
 
         RequestDispatcher rd = req.getRequestDispatcher("Endorsment.jsp");
         rd.forward(req, resp);
+    }
+
+    private String getStudentName(Long id_topic) {
+        return "Mario Rossi";
+    }
+
+    private String getTopicTitle(Long id_topic) {
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        try {
+            Entity topic = datastore.get(KeyFactory.createKey("RApP21Topic", id_topic));
+            return (String) topic.getProperty("title");
+        } catch (EntityNotFoundException e) {
+            return "";
+        }
+    }
+
+    private String getSkillTitle(Long id_skill) {
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        try {
+            Entity skill = datastore.get(KeyFactory.createKey("RApP21Skill", id_skill));
+            return (String) skill.getProperty("title");
+        } catch (EntityNotFoundException e) {
+            return "";
+        }
     }
 }
 // [END example]

@@ -30,7 +30,7 @@
   <div class="section no-pad-bot" id="index-banner">
       <div class="container">
           <div class="row center">
-            <h5 class="header col s12 light">Endorsment della skill ${id_skill} per l'argomento ${id_topic} allo studente ${id_student} completato!</h5>
+            <h5 class="header col s12 light">Endorsment della skill <b>${skill_title}</b> per l'argomento <b>${topic_title}</b> allo studente <i>${student_name}</i> completato!</h5>
           </div>
           <div class="row center">
             <div class="col s12">
