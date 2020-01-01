@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
-  <title>Hello RApP21</title>
+  <title>RApP21 | Home</title>
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
@@ -34,7 +34,7 @@
         <h5 class="header col s12 light">Benvenuto nell'app che ti permette di creare endorsment in merito a soft skills acquisite dai ragazzi</h5>
       </div>
       <div class="row center">
-        <a href="/rapp21/topics" class="btn-large waves-effect waves-light orange">INIZIA</a>
+        <a href="/topics" class="btn-large waves-effect waves-light orange">INIZIA</a>
       </div>
     </div>
   </div>

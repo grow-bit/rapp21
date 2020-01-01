@@ -31,11 +31,11 @@ import javax.servlet.*;
 
 // With @WebServlet annotation the webapp/WEB-INF/web.xml is no longer required.
 @WebServlet(
-    name = "UserAPI",
-    description = "UserAPI: Login / Logout with UserService",
-    urlPatterns = "/hellorapp21"
+    name = "Home",
+    description = "Home: rapp21 home with login",
+    urlPatterns = "/"
 )
-public class HelloRapp21 extends HttpServlet {
+public class Home extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -48,7 +48,7 @@ public class HelloRapp21 extends HttpServlet {
         if (req.getUserPrincipal() != null) {
             req.setAttribute("username", req.getUserPrincipal().getName());
             req.setAttribute("logoutUrl", userService.createLogoutURL(thisUrl));
-            RequestDispatcher rd = req.getRequestDispatcher("HelloRapp21.jsp");
+            RequestDispatcher rd = req.getRequestDispatcher("Home.jsp");
             rd.forward(req, resp);
         } else {
             resp.sendRedirect(userService.createLoginURL(thisUrl));
