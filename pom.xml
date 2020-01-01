@@ -124,6 +124,9 @@ limitations under the License.
                 https://github.com/GoogleCloudPlatform/app-maven-plugin/blob/master/USER_GUIDE.md#how-do-i-enable-automatic-reload-of-my-application
             -->
             <automaticRestart>true</automaticRestart>
+            <projectId>growbit-0</projectId>
+            <service>rapp21</service>
+            <version>GCLOUD_CONFIG</version>
         </configuration>
       </plugin>
       <!-- [END cloudplugin] -->
