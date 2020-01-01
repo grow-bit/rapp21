@@ -30,7 +30,7 @@
   <div class="section no-pad-bot" id="index-banner">
       <div class="container">
           <div class="row center">
-            <h5 class="header col s12 light">Seleziona uno studente al quale assegnare la skill ${id_skill} per l'argomento ${id_topic}</h5>
+            <h5 class="header col s12 light">Seleziona uno studente al quale assegnare la skill <b>${skill_title}</b> per l'argomento <b>${topic_title}</b></h5>
           </div>
           <div class="row">
             <div class="col s12">
