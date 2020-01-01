@@ -5,6 +5,36 @@
             "description": "Percorso #1 - Riflettere tra pari sugli impatti dell'AI",
             "id_topic": 1,
             "image": "images/etica-ia.jpg"
+        },
+        {
+            "title": "Cultura religiosa e nuove tecnologie",
+            "description": "Percorso #2 - Promesse miracolose o diaboliche minacce?",
+            "id_topic": 2,
+            "image": "images/cultura-religiosa-and-new-tech.jpg"
+        },
+        {
+            "title": "Differenza di genere nel digitale",
+            "description": "Percorso #3 - Peer learning per superare gli stereotipi",
+            "id_topic": 3,
+            "image": "images/gender-digital.jpg"
+        },
+        {
+            "title": "Storytelling negli ambienti digitali",
+            "description": "Percorso #4 - Macchine per progettare storie",
+            "id_topic": 4,
+            "image": "images/storytelling-digital.jpg"
+        },
+        {
+            "title": "Coding tra pari: creare app e videogame",
+            "description": "Percorso #5 - Coding è creatività",
+            "id_topic": 5,
+            "image": "images/coding-fra-pari.jpg"
+        },
+        {
+            "title": "Peer Learning",
+            "description": "Percorso #6 - Il peer learning alla base di tutto",
+            "id_topic": 6,
+            "image": "images/peer-learning.png"
         }
     ]
 }
