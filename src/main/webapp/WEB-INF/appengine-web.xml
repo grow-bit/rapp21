@@ -20,7 +20,10 @@
     <threadsafe>true</threadsafe>
     <static-files>
         <include path="/images/**.jpg" >
-    </include>
-  </static-files>
+        </include>
+    </static-files>
+    <resource-files>
+        <include path="/**.json" />
+    </resource-files>
 </appengine-web-app>
   <!-- [END config] -->

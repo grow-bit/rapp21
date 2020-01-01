@@ -1,0 +1,10 @@
+{
+    "topics" : [
+        {
+            "title": "Etica IA",
+            "description": "Percorso #1 - Riflettere tra pari sugli impatti dell'AI",
+            "id_topic": 1,
+            "image": "images/etica-ia.jpg"
+        }
+    ]
+}
