@@ -22,7 +22,7 @@ limitations under the License.
   <packaging>war</packaging>
 
   <groupId>com.example.appengine-j8</groupId>
-  <artifactId>helloworld</artifactId>
+  <artifactId>rapp21</artifactId>
   <version>1.0-SNAPSHOT</version>
 
 <!-- [START properties] -->
