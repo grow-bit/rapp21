@@ -105,6 +105,12 @@ limitations under the License.
         <groupId>com.google.cloud.tools</groupId>
         <artifactId>appengine-maven-plugin</artifactId>
         <version>2.2.0</version>
+        <configuration>
+            <!--
+                https://github.com/GoogleCloudPlatform/app-maven-plugin/blob/master/USER_GUIDE.md#how-do-i-enable-automatic-reload-of-my-application
+            -->
+            <automaticRestart>true</automaticRestart>
+        </configuration>
       </plugin>
       <!-- [END cloudplugin] -->
     </plugins>
