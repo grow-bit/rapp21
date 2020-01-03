@@ -135,6 +135,11 @@ limitations under the License.
             <projectId>growbit-0</projectId>
             <service>rapp21</service>
             <version>GCLOUD_CONFIG</version>
+            <jvmFlags>
+                <jvmFlag>
+                    -Dappengine.fullscan.seconds=10
+                </jvmFlag>
+            </jvmFlags>
         </configuration>
       </plugin>
       <!-- [END cloudplugin] -->
