@@ -19,9 +19,11 @@ public abstract class RApP21Servlet extends HttpServlet {
     public static final String VIEW_NAME_ATTRIBUTE = "viewName";
 
     protected SignUpEntity signUp;
+    protected RApP21Mail mail;
 
     @Override
     public void init() throws ServletException {
+        this.mail = new RApP21Mail();
     }
 
     @Override
