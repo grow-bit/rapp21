@@ -11,6 +11,9 @@
     <div class="container">
       <br><br>
       <h1 class="header center orange-text">${aclCheckMessage}</h1>
+      <form action="/acl-check" method="post">
+          <input type="submit" value="invia" />
+      </form>
     </div>
   </div>
 </body>
