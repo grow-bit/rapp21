@@ -10,7 +10,7 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      <h1 class="header center orange-text">${aclCheckMessage}</h1>
+      <h1 class="header center orange-text">SignUp Status</h1>
       <form action="/acl-check" method="post">
           <input type="submit" value="invia" />
       </form>

@@ -17,13 +17,11 @@ public abstract class RApP21Servlet extends HttpServlet {
     public static final String USER_EMAIL_ATTRIBUTE = "userEmail";
     public static final String LOGOUT_URL_ATTRIBUTE = "logoutUrl";
     public static final String VIEW_NAME_ATTRIBUTE = "viewName";
-    public static final String REDIRECT_TO_PARAM = "redirect_to";
 
-    protected AclEntity acl;
+    protected SignUpEntity signUp;
 
     @Override
     public void init() throws ServletException {
-        this.acl = new AclEntity();
     }
 
     @Override
@@ -58,18 +56,28 @@ public abstract class RApP21Servlet extends HttpServlet {
     private Boolean isLoginOk(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (this._requireLogin()) {
             UserService userService = UserServiceFactory.getUserService();
+            String reqUri = req.getRequestURI();
 
             if (req.getUserPrincipal() == null) {
                 resp.setContentType("text/html");
-                resp.sendRedirect(userService.createLoginURL("/acl?" + REDIRECT_TO_PARAM + "=" + req.getRequestURI()));
+                resp.sendRedirect(userService.createLoginURL(req.getRequestURI()));
                 return false;
             }
 
-            String userEmail = req.getUserPrincipal().getName().toLowerCase();
-            this.acl.setUserEmail(userEmail);
+            this.signUp = new SignUpEntity(req.getUserPrincipal().getName());
 
-            req.setAttribute(USER_EMAIL_ATTRIBUTE, userEmail);
+            req.setAttribute(USER_EMAIL_ATTRIBUTE, this.signUp.getUserEmail());
             req.setAttribute(LOGOUT_URL_ATTRIBUTE, userService.createLogoutURL("/logout"));
+
+            if (this.signUp.isPending() && !reqUri.startsWith("/signup-status")) {
+                resp.sendRedirect("/signup-status");
+                return false;
+            }
+
+            if (!this.signUp.isCompleted() && !reqUri.startsWith("/signup")) {
+                resp.sendRedirect("/signup");
+                return false;
+            }
         }
 
         return true;
