@@ -61,7 +61,7 @@ public abstract class RApP21Servlet extends HttpServlet {
 
             if (req.getUserPrincipal() == null) {
                 resp.setContentType("text/html");
-                resp.sendRedirect(userService.createLoginURL("/acl-check?" + REDIRECT_TO_PARAM + "=" + req.getRequestURI()));
+                resp.sendRedirect(userService.createLoginURL("/acl?" + REDIRECT_TO_PARAM + "=" + req.getRequestURI()));
                 return false;
             }
 

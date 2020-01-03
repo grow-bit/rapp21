@@ -7,11 +7,11 @@ import javax.servlet.http.*;
 import javax.servlet.*;
 
 @WebServlet(
-    name = "AclCheck",
-    description = "AclCheck: check if user has access",
-    urlPatterns = "/acl-check"
+    name = "Acl",
+    description = "Acl: check if user has access",
+    urlPatterns = "/acl"
 )
-public class AclCheck extends RApP21Servlet {
+public class Acl extends RApP21Servlet {
 
     @Override
     protected void _doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -22,6 +22,6 @@ public class AclCheck extends RApP21Servlet {
 
     @Override
     protected String _getViewName() {
-        return "AclCheck";
+        return "Acl";
     }
 }
