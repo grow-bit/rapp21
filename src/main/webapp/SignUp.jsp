@@ -4,6 +4,14 @@
 <html>
 <head>
     <jsp:include page="fragments/Head.jsp" />
+    <script>
+        $(function(){
+            $("#signup").on('submit', function(){
+                $("#signup").hide();
+                $("#loader").show();
+            })
+        })
+    </script>
 </head>
 <body>
     <jsp:include page="fragments/Nav.jsp" />
@@ -14,7 +22,7 @@
       <div class="row center">
         <p>Compila il form seguente per registrati come professore del progetto RApP21</p>
       </div>
-        <div class="row">
+        <div class="row" id="signup">
             <form action="/signup" method="post" class="col s12">
                 <div class="row">
                     <div class="input-field col s6">
@@ -44,6 +52,18 @@
                     </button>
                 </div>
             </form>
+        </div>
+        <div class="row center" id="loader" style="display: none">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                    <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
         </div>
     </div>
   </div>
