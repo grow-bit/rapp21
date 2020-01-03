@@ -14,6 +14,12 @@ import javax.servlet.*;
 
 public abstract class RApP21Servlet extends HttpServlet {
 
+    public static final String USER_EMAIL_ATTRIBUTE = "userEmail";
+    public static final String LOGOUT_URL_ATTRIBUTE = "logoutUrl";
+    public static final String VIEW_NAME_ATTRIBUTE = "viewName";
+    public static final String REDIRECT_TO_PARAM = "redirect_to";
+
+
   @Override
   public void doGet(HttpServletRequest req, HttpServletResponse resp)
       throws ServletException, IOException {
@@ -23,19 +29,19 @@ public abstract class RApP21Servlet extends HttpServlet {
 
             if (req.getUserPrincipal() == null) {
                 resp.setContentType("text/html");
-                resp.sendRedirect(userService.createLoginURL("/acl-check?redirect_to=" + req.getRequestURI()));
+                resp.sendRedirect(userService.createLoginURL("/acl-check?" + REDIRECT_TO_PARAM + "=" + req.getRequestURI()));
                 return;
             }
 
-            req.setAttribute("username", req.getUserPrincipal().getName());
-            req.setAttribute("logoutUrl", userService.createLogoutURL("/logout"));
+            req.setAttribute(USER_EMAIL_ATTRIBUTE, req.getUserPrincipal().getName());
+            req.setAttribute(LOGOUT_URL_ATTRIBUTE, userService.createLogoutURL("/logout"));
         }
         
         this._doGet(req, resp);
 
         String viewName = this._getViewName();
         if (viewName != null) {
-            req.setAttribute("viewName", viewName);
+            req.setAttribute(VIEW_NAME_ATTRIBUTE, viewName);
             RequestDispatcher rd = req.getRequestDispatcher(viewName + ".jsp");
             rd.forward(req, resp);
         }
