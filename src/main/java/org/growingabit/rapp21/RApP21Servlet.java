@@ -66,18 +66,25 @@ public abstract class RApP21Servlet extends HttpServlet {
                 return false;
             }
 
-            this.signUp = new SignUpEntity(req.getUserPrincipal().getName());
+            this.signUp = new SignUpEntity(req.getUserPrincipal().getName(), this.mail);
 
             req.setAttribute(USER_EMAIL_ATTRIBUTE, this.signUp.getUserEmail());
             req.setAttribute(LOGOUT_URL_ATTRIBUTE, userService.createLogoutURL("/logout"));
 
-            if (this.signUp.isPending() && !reqUri.startsWith("/signup-status")) {
-                resp.sendRedirect("/signup-status");
-                return false;
+            if (!this.signUp.isCompleted()) {
+                if (reqUri.equals("/signup")) {
+                    // signup non completato, puo' entrare su signup per inserire i dati
+                    return true;
+                } else {
+                    // professore deve inserire i dati di signup
+                    resp.sendRedirect("/signup");
+                    return false;
+                }
             }
 
-            if (!this.signUp.isCompleted() && !reqUri.startsWith("/signup")) {
-                resp.sendRedirect("/signup");
+            if (this.signUp.isPending() && !reqUri.equals("/signup-status")) {
+                // signup del professore deve essere validato
+                resp.sendRedirect("/signup-status");
                 return false;
             }
         }
