@@ -18,7 +18,7 @@ public class RApP21Mail {
 
     try {
       Message msg = new MimeMessage(session);
-      msg.setFrom(new InternetAddress("ehy@growbit.xyz", "Ehy GrowBit"));
+      msg.setFrom(new InternetAddress("rapp21@growbit-0.appspotmail.com", "RApP21 GAE"));
       msg.addRecipient(Message.RecipientType.TO,
                        new InternetAddress("rap2019@growbit.xyz", "RApP21 GrowBit"));
       msg.setSubject(subject);
