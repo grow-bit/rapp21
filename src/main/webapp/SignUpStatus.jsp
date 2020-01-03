@@ -10,10 +10,11 @@
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      <h1 class="header center orange-text">SignUp Status</h1>
-      <form action="/acl-check" method="post">
-          <input type="submit" value="invia" />
-      </form>
+      <h1 class="header center orange-text">Registrazione in fase di verifica</h1>
+      <div class="row center">
+          <p>Riceverai una mail quando la verifica sara' completata!</p>
+        <a href="/" class="btn-large waves-effect waves-light orange">RIPROVA</a>
+      </div>
     </div>
   </div>
 </body>
