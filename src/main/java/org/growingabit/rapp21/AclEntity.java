@@ -1,12 +1,16 @@
-package org.growingabit.rapp21.utils;
+package org.growingabit.rapp21;
 
-public class Acl {
+import com.google.appengine.api.datastore.*;
+import com.google.appengine.api.datastore.Query.*;
+
+public class AclEntity extends RApP21Entity {
 
     private String userEmail;
 
-    public Acl() {
+    public AclEntity() {
     }
 
+    
     public Boolean check() {
         return true;
     }
