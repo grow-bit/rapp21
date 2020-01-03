@@ -12,6 +12,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import javax.servlet.*;
 
+import org.growingabit.rapp21.utils.*;
+
 public abstract class RApP21Servlet extends HttpServlet {
 
     public static final String USER_EMAIL_ATTRIBUTE = "userEmail";
@@ -19,6 +21,12 @@ public abstract class RApP21Servlet extends HttpServlet {
     public static final String VIEW_NAME_ATTRIBUTE = "viewName";
     public static final String REDIRECT_TO_PARAM = "redirect_to";
 
+    protected Acl acl;
+
+    @Override
+    public void init() throws ServletException {
+        this.acl = new Acl();
+    }
 
   @Override
   public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -33,7 +41,10 @@ public abstract class RApP21Servlet extends HttpServlet {
                 return;
             }
 
-            req.setAttribute(USER_EMAIL_ATTRIBUTE, req.getUserPrincipal().getName());
+            String userEmail = req.getUserPrincipal().getName().toLowerCase();
+            this.acl.setUserEmail(userEmail);
+
+            req.setAttribute(USER_EMAIL_ATTRIBUTE, userEmail);
             req.setAttribute(LOGOUT_URL_ATTRIBUTE, userService.createLogoutURL("/logout"));
         }
         
