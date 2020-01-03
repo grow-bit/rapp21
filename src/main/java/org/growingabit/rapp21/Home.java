@@ -29,30 +29,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import javax.servlet.*;
 
-// With @WebServlet annotation the webapp/WEB-INF/web.xml is no longer required.
 @WebServlet(
     name = "Home",
     description = "Home: rapp21 home with login",
     urlPatterns = "/"
 )
-public class Home extends HttpServlet {
+public class Home extends RApP21Servlet {
 
-  @Override
-  public void doGet(HttpServletRequest req, HttpServletResponse resp)
-      throws ServletException, IOException {
-        UserService userService = UserServiceFactory.getUserService();
+    @Override
+    protected void _doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    }
 
-        String thisUrl = req.getRequestURI();
-
-        resp.setContentType("text/html");
-        if (req.getUserPrincipal() != null) {
-            req.setAttribute("username", req.getUserPrincipal().getName());
-            req.setAttribute("logoutUrl", userService.createLogoutURL(thisUrl));
-            RequestDispatcher rd = req.getRequestDispatcher("Home.jsp");
-            rd.forward(req, resp);
-        } else {
-            resp.sendRedirect(userService.createLoginURL(thisUrl));
-        }
+    @Override
+    protected String _getViewName() {
+        return "Home";
     }
 }
-// [END example]
