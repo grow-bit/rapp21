@@ -31,10 +31,10 @@ before_script:
     - gcloud config set project growbit-0
 
 script:
-  - apache-maven-3.5.0/bin/mvn -f ./pwa-backend/pom.xml clean install
-  - apache-maven-3.5.0/bin/mvn -f ./pwa-backend/pom.xml package
-  - apache-maven-3.5.0/bin/mvn -f ./pwa-backend/pom.xml appengine:deploy
-  - apache-maven-3.5.0/bin/mvn -f ./pwa-backend/pom.xml appengine:deployIndex
+  - apache-maven-3.5.0/bin/mvn clean install
+  - apache-maven-3.5.0/bin/mvn package
+  - apache-maven-3.5.0/bin/mvn appengine:deploy
+  - apache-maven-3.5.0/bin/mvn appengine:deployIndex
 
 notifications:
   email: false
