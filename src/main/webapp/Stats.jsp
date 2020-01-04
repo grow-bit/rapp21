@@ -19,7 +19,7 @@
 			</div>
 			<div class="row">
 				<div class="row">
-					<div class="col s6" id="RApPStats0">
+					<div class="col s12 l6" id="RApPStats0">
 						<div class="preloader-wrapper big active">
 							<div class="spinner-layer spinner-blue">
 								<div class="circle-clipper left">
@@ -34,7 +34,7 @@
 							</div>
 						</div>
 					</div>
-                    <div class="col s6" id="RApPStats1">
+                    <div class="col s12 l6" id="RApPStats1">
 						<div class="preloader-wrapper big active">
 							<div class="spinner-layer spinner-blue">
 								<div class="circle-clipper left">
@@ -49,7 +49,7 @@
 							</div>
 						</div>
 					</div>
-                    <div class="col s6" id="RApPStats2">
+                    <div class="col s12 l6" id="RApPStats2">
 						<div class="preloader-wrapper big active">
 							<div class="spinner-layer spinner-blue">
 								<div class="circle-clipper left">
@@ -64,7 +64,7 @@
 							</div>
 						</div>
 					</div>
-                    <div class="col s6" id="RApPStats3">
+                    <div class="col s12 l6" id="RApPStats3">
 						<div class="preloader-wrapper big active">
 							<div class="spinner-layer spinner-blue">
 								<div class="circle-clipper left">
@@ -79,7 +79,7 @@
 							</div>
 						</div>
 					</div>
-                    <div class="col s6" id="RApPStats4">
+                    <div class="col s12 l6" id="RApPStats4">
 						<div class="preloader-wrapper big active">
 							<div class="spinner-layer spinner-blue">
 								<div class="circle-clipper left">
@@ -94,7 +94,7 @@
 							</div>
 						</div>
 					</div>
-                    <div class="col s6" id="RApPStats5">
+                    <div class="col s12 l6" id="RApPStats5">
 						<div class="preloader-wrapper big active">
 							<div class="spinner-layer spinner-blue">
 								<div class="circle-clipper left">
@@ -109,7 +109,7 @@
 							</div>
 						</div>
 					</div>
-                    <div class="col s6" id="RApPStats6">
+                    <div class="col s12 l6" id="RApPStats6">
 						<div class="preloader-wrapper big active">
 							<div class="spinner-layer spinner-blue">
 								<div class="circle-clipper left">
