@@ -17,6 +17,25 @@ import org.json.simple.*;
 
 import java.util.*;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.text.StringEscapeUtils;
+import java.util.stream.Collectors;
+
+import com.google.visualization.datasource.DataSourceHelper;
+import com.google.visualization.datasource.DataSourceRequest;
+import com.google.visualization.datasource.base.DataSourceException;
+import com.google.visualization.datasource.base.ReasonType;
+import com.google.visualization.datasource.base.ResponseStatus;
+import com.google.visualization.datasource.base.StatusType;
+import com.google.visualization.datasource.base.TypeMismatchException;
+import com.google.visualization.datasource.datatable.ColumnDescription;
+import com.google.visualization.datasource.datatable.DataTable;
+import com.google.visualization.datasource.datatable.value.ValueType;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+
 @WebServlet(
     name = "StatsApi",
     description = "StatsApi: rapp21 stats api",
@@ -27,74 +46,76 @@ public class StatsApi extends RApP21Servlet {
     public static final String COLS_ATTRIBUTE = "cols";
     public static final String ROWS_ATTRIBUTE = "rows";
 
+    private static final Log log = LogFactory.getLog(StatsApi.class.getName());
+
+
     @Override
     protected void _doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String chartId = req.getParameter("chartId");
-
-        Map<String, String> dataTable = new HashMap<String, String>();
+        DataTable data;
         switch(chartId)
         { 
             case "projectTopicBadgeCount": 
-                dataTable = this.projectTopicBadgeCount();
+                data = this.projectTopicBadgeCountDT();
                 break;
             default: 
                throw new IOException("chartId not configured"); 
         }
 
-         req.setAttribute(COLS_ATTRIBUTE, dataTable.get("cols"));
-         req.setAttribute(ROWS_ATTRIBUTE, dataTable.get("rows"));
+        // https://github.com/google/google-visualization-java/blob/master/examples/src/java/SimpleExampleServlet2.java#L58-L89
+        
+        DataSourceRequest dsRequest = null;
 
-         resp.setContentType("application/javascript; charset=utf-8");
-    }
+        try {
+            // Extract the datasource request parameters.
+            dsRequest = new DataSourceRequest(req);
 
-    private Map<String, String> projectTopicBadgeCount() {
-        List<TopicEntity> topics = this.topic.findAll();
+            DataTable newData = DataSourceHelper.applyQuery(dsRequest.getQuery(), data,
+                dsRequest.getUserLocale());
 
-        List<Map<String,List<Map<String, Object>>>> rows = new ArrayList<Map<String, List<Map<String, Object>>>>();
-        Map<String, List<Map<String, Object>>> roww = new HashMap<String, List<Map<String, Object>>>();
-        List<Map<String, Object>> rowl = new ArrayList<Map<String, Object>>();
-        Map<String, Object> row = new HashMap<String, Object>();
-        for (final TopicEntity topic : topics) {
-          roww = new HashMap<String, List<Map<String, Object>>>();
-          rowl = new ArrayList<Map<String, Object>>();
-
-          String topicTitle = topic.getTitle();
-          Integer topicEndorsementCount = this.endorsement.countByTopic(topic.getId());
-
-          row = new HashMap<String, Object>();
-          row.put("v", topicTitle);
-          rowl.add(row);
-
-          row = new HashMap<String, Object>();
-          row.put("v", topicEndorsementCount);
-          rowl.add(row);
-
-          roww.put("c", rowl);
-          rows.add(roww);
+            // Set the response.
+            DataSourceHelper.setServletResponse(newData, dsRequest, resp);
+        } catch (RuntimeException rte) {
+            log.error("A runtime exception has occured", rte);
+            ResponseStatus status = new ResponseStatus(StatusType.ERROR, ReasonType.INTERNAL_ERROR,
+                rte.getMessage());
+            if (dsRequest == null) {
+                dsRequest = DataSourceRequest.getDefaultDataSourceRequest(req);
+            }
+            DataSourceHelper.setServletErrorResponse(status, dsRequest, resp);
+        } catch (DataSourceException e) {
+            if (dsRequest != null) {
+                DataSourceHelper.setServletErrorResponse(e, dsRequest, resp);
+            } else {
+                DataSourceHelper.setServletErrorResponse(e, req, resp);
+            }
         }
-
-        List<Map<String,String>> cols = new ArrayList<Map<String, String>>();
-        Map<String, String> col = new HashMap<String, String>();
-        col.put("id", "A");
-        col.put("label", "Percorso");
-        col.put("type", "string");
-        cols.add(col);
-        col = new HashMap<String, String>();
-        col.put("id", "B");
-        col.put("label", "#OpenBadge");
-        col.put("type", "number");
-        cols.add(col);
-
-        Map<String, String> dataTable = new HashMap<String, String>();
-        dataTable.put("cols", JSONValue.toJSONString(cols));
-        dataTable.put("rows", JSONValue.toJSONString(rows));
-
-        return dataTable;
+         
     }
 
-    @Override
-    protected String _getViewName() {
-        return "StatsApi";
+    private DataTable projectTopicBadgeCountDT() {
+        // Create a data table,
+        // https://github.com/google/google-visualization-java/blob/master/examples/src/java/SimpleExampleServlet2.java#L93-L113
+        DataTable data = new DataTable();
+        ArrayList<ColumnDescription> cd = new ArrayList<ColumnDescription>();
+        cd.add(new ColumnDescription("percorso", ValueType.TEXT, "Percorso"));
+        cd.add(new ColumnDescription("ob_count", ValueType.NUMBER, "#OpenBadge"));
+        
+        data.addColumns(cd);
+
+        // Fill the data table.
+        List<TopicEntity> topics = this.topic.findAll();
+        for (final TopicEntity topic : topics) {
+            String topicTitle = topic.getTitle();
+            Integer topicEndorsementCount = this.endorsement.countByTopic(topic.getId());
+            try {
+                data.addRowFromValues(topicTitle, topicEndorsementCount);
+            } catch (TypeMismatchException e) {
+                log.warn("Invalid type for %s %d".format(topicTitle, topicEndorsementCount), e);
+            }
+        }
+        
+        return data;
     }
 
     protected Boolean _requireLogin() {

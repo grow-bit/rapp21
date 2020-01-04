@@ -122,6 +122,20 @@ limitations under the License.
         <version>3.9</version>
     </dependency>
 
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-text</artifactId>
+        <version>1.8</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.google.visualization/visualization-datasource -->
+<dependency>
+    <groupId>com.google.visualization</groupId>
+    <artifactId>visualization-datasource</artifactId>
+    <version>1.1.1</version>
+</dependency>
+
+
   </dependencies>
 
   <build>
