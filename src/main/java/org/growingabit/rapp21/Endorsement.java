@@ -32,11 +32,11 @@ import com.google.appengine.api.datastore.*;
 
 // With @WebServlet annotation the webapp/WEB-INF/web.xml is no longer required.
 @WebServlet(
-    name = "EndorsmentAPI",
-    description = "EndorsmentAPI: show all the rapp21 Endorsment",
-    urlPatterns = "/endorsment"
+    name = "EndorsementAPI",
+    description = "EndorsementAPI: show all the rapp21 Endorsement",
+    urlPatterns = "/endorsement"
 )
-public class Endorsment extends HttpServlet {
+public class Endorsement extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -72,9 +72,9 @@ public class Endorsment extends HttpServlet {
         req.setAttribute("id_student", id_student);
         req.setAttribute("student_name", this.getStudentName(id_student));
 
-        this.saveEndorsment(id_topic, id_skill, id_student, userName);
+        this.saveEndorsement(id_topic, id_skill, id_student, userName);
 
-        RequestDispatcher rd = req.getRequestDispatcher("Endorsment.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("Endorsement.jsp");
         rd.forward(req, resp);
     }
 
@@ -103,19 +103,19 @@ public class Endorsment extends HttpServlet {
     }
 
 
-    private void saveEndorsment(Long id_topic, Long id_skill, Long id_student, String professor) {
+    private void saveEndorsement(Long id_topic, Long id_skill, Long id_student, String professor) {
 
-        String endorsmentKey = professor + "_" + id_topic + "_" + id_skill + "_" + id_student;
-        Entity endorsment = new Entity(KeyFactory.createKey("RApP21Endorsment", endorsmentKey));
-        endorsment.setProperty("id_topic", id_topic);
-        endorsment.setProperty("id_skill", id_skill);
-        endorsment.setProperty("id_student", id_student);
-        endorsment.setProperty("professor", professor);
-        endorsment.setProperty("updated_at", new Date());
+        String endorsementKey = professor + "_" + id_topic + "_" + id_skill + "_" + id_student;
+        Entity endorsement = new Entity(KeyFactory.createKey("RApP21Endorsement", endorsementKey));
+        endorsement.setProperty("id_topic", id_topic);
+        endorsement.setProperty("id_skill", id_skill);
+        endorsement.setProperty("id_student", id_student);
+        endorsement.setProperty("professor", professor);
+        endorsement.setProperty("updated_at", new Date());
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
-        datastore.put(endorsment);
+        datastore.put(endorsement);
     }
 }
 // [END example]

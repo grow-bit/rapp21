@@ -5,26 +5,23 @@ import com.google.appengine.api.datastore.Query.*;
 
 import java.io.IOException;
 
-import java.util.*;
+import java.util.*; 
 
-public class SkillEntity extends RApP21Entity {
+public class EndorsementEntity extends RApP21Entity {
 
-    public static final String TITLE = "title";
-    public static final String DESCRIPTION = "description";
     public static final String ID_TOPIC = "id_topic";
-    public static final String IMAGE = "image";
 
-    private Entity skill;
+    private Entity endorsement;
     protected Entity e() {
-        return this.skill;
+        return this.endorsement;
     }
 
-    public SkillEntity() {
+    public EndorsementEntity() {
     }
 
     public Integer countByTopic(Long idTopic) {
-        com.google.appengine.api.datastore.Query.Filter idTopicFilter = new FilterPredicate("id_topic", FilterOperator.EQUAL, idTopic);
-        Query query = new Query("RApP21Skill")
+        com.google.appengine.api.datastore.Query.Filter idTopicFilter = new FilterPredicate(ID_TOPIC, FilterOperator.EQUAL, idTopic);
+        Query query = new Query("RApP21Endorsement")
             .setFilter(idTopicFilter)
             .setKeysOnly();
         PreparedQuery preparedQuery = this.ds().prepare(query);

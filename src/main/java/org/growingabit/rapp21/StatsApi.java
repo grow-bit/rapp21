@@ -40,14 +40,14 @@ public class StatsApi extends RApP21Servlet {
           rowl = new ArrayList<Map<String, Object>>();
 
           String topicTitle = topic.getTitle();
-          Integer topicSkillCount = this.skill.countByTopic(topic.getId());
+          Integer topicEndorsementCount = this.endorsement.countByTopic(topic.getId());
 
           row = new HashMap<String, Object>();
           row.put("v", topicTitle);
           rowl.add(row);
 
           row = new HashMap<String, Object>();
-          row.put("v", topicSkillCount);
+          row.put("v", topicEndorsementCount);
           rowl.add(row);
 
           roww.put("c", rowl);

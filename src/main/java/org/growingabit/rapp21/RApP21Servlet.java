@@ -21,13 +21,13 @@ public abstract class RApP21Servlet extends HttpServlet {
     protected SignUpEntity signUp;
     protected RApP21Mail mail;
     protected TopicEntity topic;
-    protected SkillEntity skill;
+    protected EndorsementEntity endorsement;
 
     @Override
     public void init() throws ServletException {
         this.mail = new RApP21Mail();
         this.topic = new TopicEntity();
-        this.skill = new SkillEntity();
+        this.endorsement = new EndorsementEntity();
     }
 
     @Override
