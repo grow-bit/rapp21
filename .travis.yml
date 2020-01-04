@@ -34,7 +34,7 @@ script:
   - apache-maven-3.5.0/bin/mvn clean install
   - apache-maven-3.5.0/bin/mvn package
   - apache-maven-3.5.0/bin/mvn appengine:deploy
-  - apache-maven-3.5.0/bin/mvn appengine:deployIndex
+  - gcloud app deploy index.yaml
 
 notifications:
   email: false
