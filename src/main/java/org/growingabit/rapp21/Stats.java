@@ -7,11 +7,12 @@ import com.google.appengine.api.users.UserServiceFactory;
 import com.google.appengine.api.utils.SystemProperty;
 
 import java.io.IOException;
-import java.util.Properties;
+import java.util.*;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import javax.servlet.*;
+import org.json.simple.*;
 
 @WebServlet(
     name = "Stats",
@@ -20,8 +21,17 @@ import javax.servlet.*;
 )
 public class Stats extends RApP21Servlet {
 
+    public static final String TOPICS_JSON_ATTRIBUTE = "topicsJson";
+
     @Override
     protected void _doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<TopicEntity> topics = this.topic.findAll();
+        List<Object> topicsJson = new ArrayList<Object>(); 
+        for (TopicEntity topic : topics) {
+            topicsJson.add(topic.toMap());
+        }
+
+        req.setAttribute(TOPICS_JSON_ATTRIBUTE, JSONValue.toJSONString(topicsJson));
     }
 
     @Override

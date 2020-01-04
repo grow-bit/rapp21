@@ -43,9 +43,6 @@ import org.apache.commons.logging.LogFactory;
 )
 public class StatsApi extends RApP21Servlet {
 
-    public static final String COLS_ATTRIBUTE = "cols";
-    public static final String ROWS_ATTRIBUTE = "rows";
-
     private static final Log log = LogFactory.getLog(StatsApi.class.getName());
 
 
@@ -55,8 +52,26 @@ public class StatsApi extends RApP21Servlet {
         DataTable data;
         switch(chartId)
         { 
-            case "projectTopicBadgeCount": 
-                data = this.projectTopicBadgeCountDT();
+            case "RApPStats0": 
+                data = this.projectTopicBadgeCount();
+                break;
+            case "RApPStats1": 
+                data = this.badgeCountByTopic(1l);
+                break;
+            case "RApPStats2": 
+                data = this.badgeCountByTopic(2l);
+                break;
+            case "RApPStats3": 
+                data = this.badgeCountByTopic(3l);
+                break;
+            case "RApPStats4": 
+                data = this.badgeCountByTopic(4l);
+                break;
+            case "RApPStats5": 
+                data = this.badgeCountByTopic(5l);
+                break;
+            case "RApPStats6": 
+                data = this.badgeCountByTopic(6l);
                 break;
             default: 
                throw new IOException("chartId not configured"); 
@@ -93,7 +108,7 @@ public class StatsApi extends RApP21Servlet {
          
     }
 
-    private DataTable projectTopicBadgeCountDT() {
+    private DataTable projectTopicBadgeCount() {
         // Create a data table,
         // https://github.com/google/google-visualization-java/blob/master/examples/src/java/SimpleExampleServlet2.java#L93-L113
         DataTable data = new DataTable();
@@ -115,6 +130,43 @@ public class StatsApi extends RApP21Servlet {
             }
         }
         
+        return data;
+    }
+
+    private DataTable badgeCountByTopic(Long topicId) {
+        // Create a data table,
+        // https://github.com/google/google-visualization-java/blob/master/examples/src/java/SimpleExampleServlet2.java#L93-L113
+        DataTable data = new DataTable();
+        ArrayList<ColumnDescription> cd = new ArrayList<ColumnDescription>();
+        cd.add(new ColumnDescription("ob_title", ValueType.TEXT, "Soft Skill"));
+        cd.add(new ColumnDescription("ob_count", ValueType.NUMBER, "#OpenBadge"));
+        
+        data.addColumns(cd);
+
+        // Fill the data table.
+        List<EndorsementEntity> endorsements = this.endorsement.findByTopicId(topicId);
+        Map<Long, Long> badgeCount = new HashMap<Long, Long>();
+        for (final EndorsementEntity endorsement : endorsements) {
+            Long skillId = endorsement.getSkillId();
+            Long skillCount = badgeCount.get(skillId);
+            if (skillCount == null) {
+                skillCount = 0l;
+            }
+            skillCount += 1l;
+            badgeCount.put(skillId, skillCount);
+        }
+
+        Map<Long, SkillEntity> skills = this.skill.findByIds(badgeCount.keySet());
+        for (Map.Entry<Long, SkillEntity> skillEntry : skills.entrySet()) {
+            Long badgeCountForSkill = badgeCount.get(skillEntry.getKey());
+            String skillTitle = skillEntry.getValue().getTitle();
+            try {
+                data.addRowFromValues(skillTitle, badgeCountForSkill);
+            } catch (TypeMismatchException e) {
+                log.warn("Invalid type for %s %d".format(skillTitle, badgeCountForSkill), e);
+            }
+        }
+
         return data;
     }
 

@@ -27,6 +27,7 @@ public class TopicEntity extends RApP21Entity {
     public TopicEntity(Entity t) {
         this.idTopic = t.getKey().getId();
         this.title = (String) t.getProperty(TITLE);
+        this.topic = t;
     }
 
     public Long getId() {
