@@ -1,0 +1,4 @@
+deploy:
+  provider: gae
+  keyfile: "travis-cigrowbit-52554fcb00cd.json"
+  project: "growbit-0"
