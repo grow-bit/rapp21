@@ -25,3 +25,5 @@ hs_err_pid*
 target/
 
 src/main/resources/Students.json
+
+travis-cigrowbit-52554fcb00cd.json
