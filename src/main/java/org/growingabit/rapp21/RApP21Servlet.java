@@ -20,10 +20,14 @@ public abstract class RApP21Servlet extends HttpServlet {
 
     protected SignUpEntity signUp;
     protected RApP21Mail mail;
+    protected TopicEntity topic;
+    protected SkillEntity skill;
 
     @Override
     public void init() throws ServletException {
         this.mail = new RApP21Mail();
+        this.topic = new TopicEntity();
+        this.skill = new SkillEntity();
     }
 
     @Override
@@ -70,7 +74,7 @@ public abstract class RApP21Servlet extends HttpServlet {
 
             req.setAttribute(USER_EMAIL_ATTRIBUTE, this.signUp.getUserEmail());
             req.setAttribute(LOGOUT_URL_ATTRIBUTE, userService.createLogoutURL("/logout"));
-
+/*
             if (!this.signUp.isCompleted()) {
                 if (reqUri.equals("/signup")) {
                     // signup non completato, puo' entrare su signup per inserire i dati
@@ -87,6 +91,7 @@ public abstract class RApP21Servlet extends HttpServlet {
                 resp.sendRedirect("/signup-status");
                 return false;
             }
+            */
         }
 
         return true;
