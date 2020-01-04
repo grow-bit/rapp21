@@ -98,7 +98,7 @@ public class Skills extends HttpServlet {
             entity.setProperty("description", description);
             entity.setProperty("image", image);
             entity.setProperty("id_topic", id_topic);
-            entity.setProperty("id_skill", id_topic);
+            entity.setProperty("id_skill", id_skill);
             entity.setProperty("id_esco", id_esco);
             entities.add(entity);
         }

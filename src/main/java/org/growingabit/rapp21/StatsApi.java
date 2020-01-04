@@ -29,6 +29,25 @@ public class StatsApi extends RApP21Servlet {
 
     @Override
     protected void _doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String chartId = req.getParameter("chartId");
+
+        Map<String, String> dataTable = new HashMap<String, String>();
+        switch(chartId)
+        { 
+            case "projectTopicBadgeCount": 
+                dataTable = this.projectTopicBadgeCount();
+                break;
+            default: 
+               throw new IOException("chartId not configured"); 
+        }
+
+         req.setAttribute(COLS_ATTRIBUTE, dataTable.get("cols"));
+         req.setAttribute(ROWS_ATTRIBUTE, dataTable.get("rows"));
+
+         resp.setContentType("application/javascript; charset=utf-8");
+    }
+
+    private Map<String, String> projectTopicBadgeCount() {
         List<TopicEntity> topics = this.topic.findAll();
 
         List<Map<String,List<Map<String, Object>>>> rows = new ArrayList<Map<String, List<Map<String, Object>>>>();
@@ -66,10 +85,11 @@ public class StatsApi extends RApP21Servlet {
         col.put("type", "number");
         cols.add(col);
 
-         req.setAttribute(COLS_ATTRIBUTE, JSONValue.toJSONString(cols));
-         req.setAttribute(ROWS_ATTRIBUTE, JSONValue.toJSONString(rows));
+        Map<String, String> dataTable = new HashMap<String, String>();
+        dataTable.put("cols", JSONValue.toJSONString(cols));
+        dataTable.put("rows", JSONValue.toJSONString(rows));
 
-         resp.setContentType("application/javascript; charset=utf-8");
+        return dataTable;
     }
 
     @Override

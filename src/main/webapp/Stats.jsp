@@ -50,13 +50,13 @@
                 {
                     id: 'projectTopicBadgeCount',
                     type: 'PieChart',
-                    title: 'ESCO OpenBadge per progetto'
+                    title: 'ESCO OpenBadge per argomento RApP'
                 }
             ];
 
             for(var i=0; i < charts.length; i++) {
                 var chart = charts[i];
-                var statsApiUrl = window.location.origin + '/api/stats?chart=' + chart.id;
+                var statsApiUrl = window.location.origin + '/api/stats?chartId=' + chart.id;
                 var query = new google.visualization.Query(statsApiUrl, opts);
                 query.send(handleQueryResponseW(chart.title, chart.id, chart.type));
             }   
