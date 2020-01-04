@@ -30,14 +30,28 @@ public class StatsApi extends RApP21Servlet {
     @Override
     protected void _doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<TopicEntity> topics = this.topic.findAll();
-        List<List<Object>> stats = new ArrayList<List<Object>>();
-        // intestazione
-        stats.add(Arrays.asList("Percorso", "#OpenBadge"));
 
+        List<Map<String,List<Map<String, Object>>>> rows = new ArrayList<Map<String, List<Map<String, Object>>>>();
+        Map<String, List<Map<String, Object>>> roww = new HashMap<String, List<Map<String, Object>>>();
+        List<Map<String, Object>> rowl = new ArrayList<Map<String, Object>>();
+        Map<String, Object> row = new HashMap<String, Object>();
         for (final TopicEntity topic : topics) {
+          roww = new HashMap<String, List<Map<String, Object>>>();
+          rowl = new ArrayList<Map<String, Object>>();
+
           String topicTitle = topic.getTitle();
           Integer topicSkillCount = this.skill.countByTopic(topic.getId());
-          stats.add(Arrays.asList(topicTitle, topicSkillCount));
+
+          row = new HashMap<String, Object>();
+          row.put("v", topicTitle);
+          rowl.add(row);
+
+          row = new HashMap<String, Object>();
+          row.put("v", topicSkillCount);
+          rowl.add(row);
+
+          roww.put("c", rowl);
+          rows.add(roww);
         }
 
         List<Map<String,String>> cols = new ArrayList<Map<String, String>>();
@@ -51,21 +65,6 @@ public class StatsApi extends RApP21Servlet {
         col.put("label", "#OpenBadge");
         col.put("type", "number");
         cols.add(col);
-
-        List<Map<String, Object>> rowl = new ArrayList<Map<String, Object>>();
-        Map<String, Object> row = new HashMap<String, Object>();
-        row.put("v", "Etica IA");
-        rowl.add(row);
-        row = new HashMap<String, Object>();
-        row.put("v", 10);
-        rowl.add(row);
-        
-        Map<String, List<Map<String, Object>>> roww = new HashMap<String, List<Map<String, Object>>>();
-        roww.put("c", rowl);
-        List<Map<String,List<Map<String, Object>>>> rows = new ArrayList<Map<String, List<Map<String, Object>>>>();
-        rows.add(roww);
-
-         String jsonText = JSONValue.toJSONString(stats);
 
          req.setAttribute(COLS_ATTRIBUTE, JSONValue.toJSONString(cols));
          req.setAttribute(ROWS_ATTRIBUTE, JSONValue.toJSONString(rows));
