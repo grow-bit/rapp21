@@ -23,6 +23,7 @@ public abstract class RApP21Servlet extends HttpServlet {
     protected TopicEntity topic;
     protected EndorsementEntity endorsement;
     protected SkillEntity skill;
+    protected StudentEntity student;
 
     @Override
     public void init() throws ServletException {
@@ -30,6 +31,7 @@ public abstract class RApP21Servlet extends HttpServlet {
         this.topic = new TopicEntity();
         this.endorsement = new EndorsementEntity();
         this.skill = new SkillEntity();
+        this.student = new StudentEntity();
     }
 
     @Override

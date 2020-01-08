@@ -15,9 +15,9 @@
           <div class="row">
             <div class="col s12">
                 <div class="collection">
-                    <a href="/endorsement?id_topic=${id_topic}&id_skill=${id_skill}&id_student=1" class="collection-item">Alan</a>
-                    <a href="/endorsement?id_topic=${id_topic}&id_skill=${id_skill}&id_student=2" class="collection-item">Margot</a>
-                    <a href="/endorsement?id_topic=${id_topic}&id_skill=${id_skill}&id_student=3" class="collection-item">Eli</a>
+                    <c:forEach var="student" items="${students}">
+                        <a href="/endorsement?id_topic=${id_topic}&id_skill=${id_skill}&id_student=${student.id}" class="collection-item">${student.name} ${student.surname} ${student.classroom}</a>
+                    </c:forEach>
                 </div>
             </div>
         </div>
